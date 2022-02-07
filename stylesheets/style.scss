@@ -1,0 +1,227 @@
+@use "reset";
+
+$desaturated-red: hsl(0, 36%, 70%);
+$soft-red: hsl(0, 93%, 68%);
+$dark-grayish-red: hsl(0, 6%, 24%);
+
+@mixin background($index) {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: $index;
+}
+
+main {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 100vh;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding-bottom: 5px;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+.col-left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4.2rem 9rem 0 15rem;
+}
+
+.col-left::before {
+  @include background(-2);
+  background-image: linear-gradient(
+    135deg,
+    hsl(0, 0%, 100%),
+    hsl(0, 100%, 98%)
+  );
+}
+
+.col-left::after {
+  @include background(-1);
+  background: url("../images/bg-pattern-desktop.svg");
+  background-size: cover;
+}
+
+.content {
+  padding: 3rem 11rem;
+}
+
+.description {
+  color: $desaturated-red;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.heading {
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 12px;
+  color: $desaturated-red;
+  line-height: normal;
+  margin: 11rem 0 2rem;
+
+  span {
+    font-weight: 700;
+    color: $dark-grayish-red;
+  }
+}
+
+.email-container {
+  position: relative;
+
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    padding: none;
+    height: 3.5rem;
+    width: 6rem;
+    border-radius: 35px;
+    text-align: center;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+      rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+    background-image: linear-gradient(
+      135deg,
+      hsl(0, 80%, 86%),
+      hsl(0, 74%, 74%)
+    );
+    cursor: pointer;
+    transition: 0.2s;
+  }
+
+  button:hover {
+    box-shadow: rgba(50, 50, 93, 0.45) 0px 13px 27px -5px,
+      rgba(0, 0, 0, 0.5) 0px 8px 16px -8px;
+    opacity: 0.6;
+  }
+
+  button:active {
+    transform: scale(1.05);
+  }
+
+  button img {
+    margin: auto;
+  }
+
+  input {
+    display: inline-block;
+    border: 1px solid hsl(0, 17%, 80%);
+    border-radius: 35px;
+    height: 3.5rem;
+    width: 100%;
+    padding: 0 2rem;
+    outline-color: hsl(0, 17%, 80%);
+    background-color: transparent;
+  }
+
+  input::placeholder {
+    color: hsl(0, 17%, 80%);
+  }
+}
+
+.error-icon {
+  position: absolute;
+  top: 1rem;
+  right: 7rem;
+}
+
+.error-message {
+  color: $soft-red;
+  padding-left: 2rem;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.invalid-email {
+  visibility: hidden;
+}
+
+.logo-mobile,
+.mobile {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  main {
+    flex-direction: column;
+  }
+
+  .col-left {
+    all: unset;
+    background-image: linear-gradient(
+      135deg,
+      hsl(0, 0%, 100%),
+      hsl(0, 100%, 98%)
+    );
+  }
+
+  .content {
+    text-align: center;
+    padding: 4rem 1.6rem;
+
+    .heading {
+      font-size: 2.7rem;
+      margin-top: unset;
+
+      span {
+        font-weight: 700;
+        color: $dark-grayish-red;
+      }
+    }
+
+    .description {
+      font-size: 0.9rem;
+    }
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .email-container {
+    position: relative;
+
+    input {
+      height: 3rem;
+    }
+
+    input::placeholder {
+      font-size: 0.9rem;
+    }
+
+    button {
+      height: 3rem;
+      width: 4rem;
+    }
+  }
+
+  .error-icon {
+    top: 0.75rem;
+    right: 5rem;
+  }
+
+  .error-message {
+    text-align: left;
+  }
+
+  .logo-mobile,
+  .mobile {
+    display: block;
+  }
+
+  .logo-desktop {
+    display: none;
+  }
+}

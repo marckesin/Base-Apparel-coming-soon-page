@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- displays site properly based on user's device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+  </head>
+
+  <body>
+    <main>
+      <div class="logo-mobile" style="padding: 32px 24px">
+        <img src="images/logo.svg" alt="" height="25" />
+      </div>
+      <img class="desktop" src="images/hero-desktop.jpg" alt="Model Image" />
+      <img class="mobile" src="images/hero-mobile.jpg" alt="Model Image" />
+      <div class="col-left">
+        <div class="content">
+          <div>
+            <img
+              class="logo-desktop"
+              src="images/logo.svg"
+              alt="Logo Image"
+              width="150px"
+              height="auto"
+            />
+          </div>
+          <h1 class="heading">We're <span>coming soon</span></h1>
+          <p class="description">
+            Hello fellow shoppers! We're currently building our new fashion
+            store. Add your email below to stay up-to-date with announcements
+            and our launch deals.
+          </p>
+          <form action="/" method="post">
+            <div class="email-container">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email Address"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                value=""
+              />
+              <img
+                class="error-icon invalid-email"
+                src="images/icon-error.svg"
+                alt="Error Icon"
+              />
+              <p class="error-message invalid-email">
+                Please provide a valid email
+              </p>
+              <button type="submit" id="submit">
+                <img src="images/icon-arrow.svg" alt="Arrow Icon" />
+              </button>
+            </div>
+          </form>
+        </div>
+        <div>
+          <p class="attribution">
+            Challenge by
+            <a
+              href="https://www.frontendmentor.io?ref=challenge"
+              target="_blank"
+              >Frontend Mentor</a
+            >. Coded by
+            <a href="https://www.frontendmentor.io/profile/marckesin">Ronaldo</a
+            >.
+          </p>
+        </div>
+      </div>
+    </main>
+    <script src="javascripts/script.js"></script>
+  </body>
+</html>

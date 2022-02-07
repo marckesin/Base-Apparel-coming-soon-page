@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 16px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+main {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 100vh;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+.col-left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 4.2rem 9rem 0 15rem;
+}
+
+.col-left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  background-image: linear-gradient(135deg, white, #fff5f5);
+}
+
+.col-left::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: url("../images/bg-pattern-desktop.svg");
+  background-size: cover;
+}
+
+.content {
+  padding: 3rem 11rem;
+}
+
+.description {
+  color: #ce9797;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.heading {
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 300;
+  letter-spacing: 12px;
+  color: #ce9797;
+  line-height: normal;
+  margin: 11rem 0 2rem;
+}
+.heading span {
+  font-weight: 700;
+  color: #413a3a;
+}
+
+.email-container {
+  position: relative;
+}
+.email-container button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  padding: none;
+  height: 3.5rem;
+  width: 6rem;
+  border-radius: 35px;
+  text-align: center;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  background-image: linear-gradient(135deg, #f8bfbf, #ee8c8c);
+  cursor: pointer;
+  transition: 0.2s;
+}
+.email-container button:hover {
+  box-shadow: rgba(50, 50, 93, 0.45) 0px 13px 27px -5px, rgba(0, 0, 0, 0.5) 0px 8px 16px -8px;
+  opacity: 0.6;
+}
+.email-container button:active {
+  transform: scale(1.05);
+}
+.email-container button img {
+  margin: auto;
+}
+.email-container input {
+  display: inline-block;
+  border: 1px solid #d5c3c3;
+  border-radius: 35px;
+  height: 3.5rem;
+  width: 100%;
+  padding: 0 2rem;
+  outline-color: #d5c3c3;
+  background-color: transparent;
+}
+.email-container input::placeholder {
+  color: #d5c3c3;
+}
+
+.error-icon {
+  position: absolute;
+  top: 1rem;
+  right: 7rem;
+}
+
+.error-message {
+  color: #f96262;
+  padding-left: 2rem;
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.invalid-email {
+  visibility: hidden;
+}
+
+.logo-mobile,
+.mobile {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  main {
+    flex-direction: column;
+  }
+
+  .col-left {
+    all: unset;
+    background-image: linear-gradient(135deg, white, #fff5f5);
+  }
+
+  .content {
+    text-align: center;
+    padding: 4rem 1.6rem;
+  }
+  .content .heading {
+    font-size: 2.7rem;
+    margin-top: unset;
+  }
+  .content .heading span {
+    font-weight: 700;
+    color: #413a3a;
+  }
+  .content .description {
+    font-size: 0.9rem;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .email-container {
+    position: relative;
+  }
+  .email-container input {
+    height: 3rem;
+  }
+  .email-container input::placeholder {
+    font-size: 0.9rem;
+  }
+  .email-container button {
+    height: 3rem;
+    width: 4rem;
+  }
+
+  .error-icon {
+    top: 0.75rem;
+    right: 5rem;
+  }
+
+  .error-message {
+    text-align: left;
+  }
+
+  .logo-mobile,
+.mobile {
+    display: block;
+  }
+
+  .logo-desktop {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
