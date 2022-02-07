@@ -34,7 +34,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 4.2rem 9rem 0 15rem;
+  padding: 1rem 9rem 0 15rem;
 }
 
 .col-left::before {
@@ -69,7 +69,7 @@ main {
   letter-spacing: 12px;
   color: $desaturated-red;
   line-height: normal;
-  margin: 11rem 0 2rem;
+  margin: 7rem 0 2rem;
 
   span {
     font-weight: 700;
