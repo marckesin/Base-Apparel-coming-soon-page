@@ -1,17 +1,22 @@
+const checkEmail = input => {
+  if (!input.email.value.match(input.email.pattern)) {
+    input.errorIcon.style.visibility = "visible";
+    input.errorMessage.style.visibility = "visible";
+    input.email.style.borderColor = "red";
+  } else {
+    input.errorIcon.style.visibility = "hidden";
+    input.errorMessage.style.visibility = "hidden";
+    input.email.style.borderColor = "hsl(0, 17%, 80%)";
+  }
+};
+
 document.getElementById("submit").addEventListener("click", event => {
-  const email = document.getElementById("email");
-  const errorIcon = document.querySelector(".error-icon");
-  const errorMessage = document.querySelector(".error-message");
+  const input = {
+    email: document.getElementById("email"),
+    errorIcon: document.querySelector(".error-icon"),
+    errorMessage: document.querySelector(".error-message"),
+  };
 
   event.preventDefault();
-
-  if (!email.value.match(email.pattern)) {
-    errorIcon.style.visibility = "visible";
-    errorMessage.style.visibility = "visible";
-    email.style.borderColor = "red";
-  } else {
-    errorIcon.style.visibility = "hidden";
-    errorMessage.style.visibility = "hidden";
-    email.style.borderColor = "hsl(0, 17%, 80%)";
-  }
+  checkEmail(input);
 });
