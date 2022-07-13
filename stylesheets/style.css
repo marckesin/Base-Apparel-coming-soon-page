@@ -63,7 +63,6 @@ main {
   text-align: center;
   padding-bottom: 5px;
 }
-
 .attribution a {
   color: #3e52a3;
 }
@@ -75,18 +74,6 @@ main {
   justify-content: space-between;
   padding: 1rem 9rem 0 15rem;
 }
-
-.col-left::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -2;
-  background-image: linear-gradient(135deg, white, #fff5f5);
-}
-
 .col-left::after {
   content: "";
   position: absolute;
@@ -97,6 +84,16 @@ main {
   z-index: -1;
   background: url("../images/bg-pattern-desktop.svg");
   background-size: cover;
+}
+.col-left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -2;
+  background-image: linear-gradient(135deg, white, #fff5f5);
 }
 
 .content {
